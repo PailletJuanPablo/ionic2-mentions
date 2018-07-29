@@ -1,0 +1,7 @@
+{
+  "name": "mentions",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
