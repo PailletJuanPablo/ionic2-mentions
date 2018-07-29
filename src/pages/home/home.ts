@@ -18,7 +18,7 @@ export class HomePage implements OnChanges {
   constructor(public navCtrl: NavController, public http: HttpClient) {
     //this.items.push("Jorge");
     // this.items.push("Juancho")
-    this.http.get("http://api.voilacook.com/users").toPromise().then((res: Array<any>) => {
+    this.http.get("//").toPromise().then((res: Array<any>) => {
       console.log(res);
       this.users = res;
       this.users.forEach(user => {
