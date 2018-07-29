@@ -1,16 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Mention
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  Seleccione usuario<br>
-    <textarea #mention 
+Select<br>
+    <textarea #mentionInput id="mentionInput"
     placeholder="Seleccione usuario" 
     type="text" [mention]="items" 
+    (keydown)="resize($event)"
     >
   </textarea>
+  Select<br>
+  <ion-item>
+    <ion-textarea type="text" placeholder="Enter a description"></ion-textarea>
+  </ion-item>
 </ion-content>

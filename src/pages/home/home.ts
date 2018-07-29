@@ -1,5 +1,6 @@
+import { ElementRef } from '@angular/core';
 import { MentionModule } from './../../directives/mention/mention.module';
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ViewChild} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -7,6 +8,10 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnChanges {
+
+  @ViewChild('mentionInput') myInput: ElementRef;
+
+
   items: string[] = [];
   trigger: string = "@";
   users: Array<any>;
@@ -29,6 +34,10 @@ export class HomePage implements OnChanges {
   ngOnChanges(changes) {
     console.log(changes)
   }
+
+  resize() {
+    this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeight + 'px';
+}
 
   
 
